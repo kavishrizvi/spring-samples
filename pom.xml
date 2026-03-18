@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot Parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
+
     <groupId>com.kavish.tutorials</groupId>
     <artifactId>Java-Spring-Samples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <name>Java-Spring-Samples</name>
     <description>Java Spring Samples</description>
+
+    <!-- Modules -->
     <modules>
         <module>config-server</module>
         <module>config-client</module>
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>hateoas</module>
-        <module>circuit-breaker</module>
+        <module>circuit-breaker-using-hystrix</module>
         <module>spring-boot-hibernate-postgresql</module>
         <module>kafka-producer</module>
         <module>spring-jpa</module>
@@ -29,95 +38,57 @@
         <module>oauth2-security</module>
         <module>elk-logging-framework</module>
         <module>oauth-auth-server</module>
-<!--        <module>spring-boot-captcha-security-thymeleaf</module>-->
         <module>spring-openai</module>
         <module>spring-security</module>
         <module>spring-aop-weaving</module>
         <module>spring-boot-aop-weaving</module>
         <module>spring-boot-controller-advice</module>
     </modules>
+
+    <!-- Common Dependencies -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+    <!-- Dependency Management -->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>3.2.5</version>
-                <scope>compile</scope>
-            </dependency>
+
+            <!-- ✅ Correct Spring Cloud BOM -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-parent</artifactId>
+                <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-hystrix</artifactId>
-                <version>1.4.7.RELEASE</version>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-                <version>1.4.7.RELEASE</version>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <optional>true</optional>
-                <version>1.18.32</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>cn.apiclub.tool</groupId>
-                <artifactId>simplecaptcha</artifactId>
-                <version>1.2.2</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>javax.xml.bind</groupId>
-                <artifactId>jaxb-api</artifactId>
-                <version>2.3.1</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.data</groupId>
-                <artifactId>spring-data-jpa</artifactId>
-                <version>2.7.5</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>jakarta.persistence</groupId>
-                <artifactId>jakarta.persistence-api</artifactId>
-                <version>2.2.3</version>
-                <scope>compile</scope>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <!-- Build -->
     <build>
         <pluginManagement>
             <plugins>
@@ -125,15 +96,19 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <configuration>
-                        <source>23</source>
-                        <target>23</target>
+                        <source>17</source>
+                        <target>17</target>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
+    <!-- Properties -->
     <properties>
-        <skipTests>true</skipTests>
+        <java.version>17</java.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <skipTests>true</skipTests>
     </properties>
+
 </project>
