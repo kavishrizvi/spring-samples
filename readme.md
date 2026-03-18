@@ -139,6 +139,18 @@ Stateless authentication using JWT.
 Graph-based API layer as an alternative to REST.
 
 ---
+### 5. FeignClient with Spring Boot
+Graph-based API layer as an alternative to REST.
+
+---
+### 6. Webclient with Spring Boot
+Graph-based API layer as an alternative to REST.
+
+---
+### 7. gRPC with Spring Boot
+Graph-based API layer as an alternative to REST.
+
+---
 
 ## Structure
 
