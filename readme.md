@@ -22,3 +22,4 @@
 1. Circuit Breaker Pattern using Resillience4j
 2. Spring Boot + MongoDB
 3. JWT Implementation using Spring Security
+4. GraphQL with Spring Boot Implementation

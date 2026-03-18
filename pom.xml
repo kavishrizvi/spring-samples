@@ -15,12 +15,12 @@
     </parent>
 
     <groupId>com.kavish.tutorials</groupId>
-    <artifactId>Java-Spring-Samples</artifactId>
+    <artifactId>spring-samples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Java-Spring-Samples</name>
-    <description>Java Spring Samples</description>
+    <name>Spring Sample Implementations</name>
+    <description>Spring Sample Implementations</description>
 
     <!-- Modules -->
     <modules>
@@ -43,6 +43,7 @@
         <module>spring-aop-weaving</module>
         <module>spring-boot-aop-weaving</module>
         <module>spring-boot-controller-advice</module>
+        <module>graphql</module>
     </modules>
 
     <!-- Common Dependencies -->
