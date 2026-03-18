@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+ms-users:
+  host: http://localhost
+  port: 9092
+
+getusers-resource-url: /v1/getusers
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
